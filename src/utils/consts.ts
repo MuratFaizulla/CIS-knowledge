@@ -1,0 +1,9 @@
+export const HOME_PAGE_ROUTE = "/";
+export const ABOUT_PAGE_ROUTE = "/about";
+export const LOGIN_PAGE_ROUTE = "/login";
+export const PROFILE_PAGE_ROUTE = "/profile";
+export const CLASSES_PAGE_ROUTE = "/classes";
+export const CLASSESSTUDENTS_PAGE_ROUTE = "/classes/:classId/students";
+export const STUDENT_EVALUATION_PAGE_ROUTE = "/classes/:classId/students/:studentId/evaluate";
+export const MY_EVALUATIONS_PAGE_ROUTE = "/my-evaluations";
+export const EVALUATION_DETAIL_PAGE_ROUTE = "/evaluations/:evaluationId"; // Новый маршрут

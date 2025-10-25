@@ -1,0 +1,234 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  flex: 0 0 auto;
+}
+
+.logoLink {
+  display: block;
+}
+
+.logoLink img {
+  height: 40px;
+  width: auto;
+}
+
+.navDesktop {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navLink {
+  color: #4b5563;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: #d17950;
+}
+
+.navLink:focus {
+  outline: 2px solid #7BC803;
+  outline-offset: 2px;
+}
+
+.authSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profileContainer {
+  position: relative;
+}
+
+.profileButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profileButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.profileButton:focus {
+  outline: 2px solid #7BC803;
+  outline-offset: 2px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #e5e7eb;
+  object-fit: cover;
+}
+
+.avatarIcon {
+  width: 32px;
+  height: 32px;
+  color: #4b5563;
+}
+
+.userName {
+  color: #1f2937;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  margin-top: 0.5rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdownItem {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #4b5563;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdownItem:hover {
+  background-color: #f9fafb;
+  color: #d17950;
+}
+
+.dropdownItem:focus {
+  outline: 2px solid #7BC803;
+  outline-offset: 2px;
+}
+
+.loginBtn {
+  background-color: #7BC803;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.loginBtn:hover {
+  background-color: #6ab003;
+  transform: translateY(-2px);
+}
+
+.loginBtn:focus {
+  outline: 2px solid #7BC803;
+  outline-offset: 2px;
+}
+
+.mobileAvatarButton {
+  display: none;
+}
+
+.mobileProfileButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.mobileAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #e5e7eb;
+  object-fit: cover;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .header {
+    padding: 0.75rem 1rem;
+  }
+
+  .container {
+    flex-wrap: wrap;
+  }
+
+  .logoLink img {
+    height: 32px;
+  }
+
+  .navDesktop {
+    display: none; /* Hide desktop nav on mobile */
+  }
+
+  .authSection {
+    gap: 0.5rem;
+  }
+
+  .profileContainer {
+    display: none; /* Hide desktop profile button on mobile */
+  }
+
+  .mobileAvatarButton {
+    display: block;
+  }
+
+  .dropdown {
+    min-width: 160px;
+    right: -10px;
+  }
+
+  .dropdownItem {
+    font-size: 13px;
+    padding: 0.65rem 0.8rem;
+  }
+
+  .loginBtn {
+    font-size: 13px;
+    padding: 0.4rem 0.8rem;
+  }
+}

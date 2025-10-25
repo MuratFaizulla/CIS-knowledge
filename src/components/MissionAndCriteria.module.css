@@ -1,0 +1,113 @@
+.missionSection {
+  max-width: 1000px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.sectionTitle {
+  color: #d17950;
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.missionCard {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.missionText {
+  color: #4b5563;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.missionText:last-of-type {
+  margin-bottom: 0;
+}
+
+.criteriaContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.criterionCard {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.criterionCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.criterionCard:focus-within {
+  outline: 2px solid #7BC803;
+  outline-offset: 2px;
+}
+
+.criterionTitle {
+  color: #8caad3;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.criterionDescription {
+  color: #4b5563;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .missionSection {
+    margin: 1.5rem auto;
+    padding: 0 0.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 24px;
+    margin-bottom: 1rem;
+  }
+
+  .missionCard {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .missionText {
+    font-size: 14px;
+  }
+
+  .criteriaContainer {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .criterionCard {
+    padding: 1rem;
+  }
+
+  .criterionTitle {
+    font-size: 16px;
+  }
+
+  .criterionDescription {
+    font-size: 13px;
+  }
+}
