@@ -4,16 +4,16 @@ import styles from './MissionAndCriteria.module.css';
 const MissionAndCriteria: React.FC = () => {
   return (
     <div className={styles.missionSection}>
-      <h2 className={styles.sectionTitle}>Миссия CIS</h2>
+      <h2 className={styles.sectionTitle}>CIS мақсаты мен болашаққа көзқарасы</h2>
       <div className={styles.missionCard}>
         <p className={styles.missionText}>
-          <strong>International Education Organisation - CIS</strong> — это международная образовательная организация, 
-          посвященная созданию инновационной среды для обучения, где ученики развивают глобальное мышление, 
-          критическое решение проблем и лидерские качества для успеха в 21 веке.
+          <strong> Аккредитацияның мақсаты</strong> — Әлеуметтік жауапты көшбасшылыққа баса назар аудара отырып, дамуға бағдарланған тәсіл арқылы мектепті стратегиялық жетілдіруді қолдау.
         </p>
         <p className={styles.missionText}>
-          Мы стремимся вдохновлять и обучать следующее поколение лидеров через высококачественное образование, 
-          основанное на принципах международных лучших практик, культурного разнообразия и устойчивого развития.
+          <strong>CIS болашаққа көзқарасы</strong> — Халықаралық білім беру арқылы әлеуметтік жауапты көшбасшылықты дамыту.
+        </p>
+          <p className={styles.missionText}>
+          <strong>Білім алушы ұйым</strong> — Әрбір CIS мектебі өзін жетекші халықаралық тәжірибелермен салыстыратын оқытуға бағытталған ұйым болып табылады.
         </p>
       </div>
 

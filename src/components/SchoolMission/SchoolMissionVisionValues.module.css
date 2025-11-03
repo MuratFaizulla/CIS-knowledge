@@ -1,0 +1,140 @@
+.missionSection {
+  max-width: 1000px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.sectionTitle {
+  color: #d17950;
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1.8rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.card:focus-within {
+  outline: 2px solid #7BC803;
+  outline-offset: 3px;
+}
+
+.cardTitle {
+  color: #6ea0e6;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.cardText {
+  color: #374151;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ✅ VALUES — 3 columns responsive */
+.valuesContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 1.2rem;
+}
+
+.column {
+  flex: 1;
+  padding: 0 0.5rem;
+  border-right: 1px solid #e5e7eb;
+}
+
+.column:last-child {
+  border-right: none;
+}
+
+.column h4 {
+  margin-bottom: 0.6rem;
+  color: #7BC803;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.55;
+  text-align: center;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.column li {
+  margin: 0.4rem 0;
+}
+
+/* 📱 MOBILE (1 column) */
+@media (max-width: 600px) {
+  .valuesContainer {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .column {
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1rem;
+  }
+
+  .column:last-child {
+    border-bottom: none;
+  }
+
+  .card {
+    padding: 1.2rem;
+  }
+
+  .cardTitle {
+    font-size: 18px;
+  }
+
+  .cardText {
+    font-size: 14px;
+  }
+}
+
+/* 📲 TABLET (2 columns) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .valuesContainer {
+    flex-wrap: wrap;
+  }
+
+  .column {
+    flex: 1 1 45%;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1rem;
+  }
+
+  .column:nth-child(2) {
+    border-bottom: none;
+  }
+
+  .column:last-child {
+    border-bottom: none;
+  }
+}

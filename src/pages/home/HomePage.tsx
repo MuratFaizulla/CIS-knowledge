@@ -4,9 +4,9 @@ import { useAuth } from '../../context/AuthContext';
 import { fetchProfile } from '../../services/apiService';
 import { CLASSES_PAGE_ROUTE, LOGIN_PAGE_ROUTE, MY_EVALUATIONS_PAGE_ROUTE, PROFILE_PAGE_ROUTE } from '../../utils/consts';
 import styles from './HomePage.module.css';
-import FAQ from '../../components/FAQ';
-import MissionAndCriteria from '../../components/MissionAndCriteria';
-import SchoolMissionVisionValues from '../../components/SchoolMissionVisionValues';
+import FAQ from '../../components/FAQ/FAQ';
+import MissionAndCriteria from '../../components/CISMission/MissionAndCriteria';
+import SchoolMissionVisionValues from '../../components/SchoolMission/SchoolMissionVisionValues';
 
 // Interface to match fetchProfile response
 interface GeneralProfile {
@@ -170,7 +170,6 @@ const HomePage: React.FC = () => {
           <SchoolMissionVisionValues />
           <MissionAndCriteria />
           <FAQ />
-    
         </div>
       )}
     </div>

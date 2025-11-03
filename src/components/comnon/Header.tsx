@@ -111,8 +111,8 @@ const Header: React.FC = () => {
           </Link>
         </div>
         <nav className={styles.navDesktop}>
-          <Link to={HOME_PAGE_ROUTE} className={styles.navLink}>Home</Link>
-          <Link to={ABOUT_PAGE_ROUTE} className={styles.navLink}>About</Link>
+          <Link to={HOME_PAGE_ROUTE} className={styles.navLink}>Главная</Link>
+          <Link to={ABOUT_PAGE_ROUTE} className={styles.navLink}>О Нас</Link>
         </nav>
         <div className={styles.authSection}>
           {isAuthenticated ? (
