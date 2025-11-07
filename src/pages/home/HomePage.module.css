@@ -103,6 +103,18 @@
   outline: 2px solid #7BC803;
   outline-offset: 2px;
 }
+.dashboardButton{
+  width: 60%;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
 
 .loading {
   color: #7BC803;

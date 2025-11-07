@@ -16,7 +16,12 @@ import {
   PROFILE_PAGE_ROUTE,
   STUDENT_EVALUATION_PAGE_ROUTE,
   MY_EVALUATIONS_PAGE_ROUTE,
+  CIS_DASHBOARD_ROUTE,
+  EVALUATION_DETAIL_PAGE_ROUTE,
+  STUDENT_PROGRESS_ROUTE,
 } from "./consts";
+import CISDashboardPage from "../pages/CISDashboardPage";
+import StudentProgressPage from "../pages/StudentProgressPage";
 
 export const routes = [
   {
@@ -52,8 +57,16 @@ export const routes = [
     element: MyEvaluationsPage,
   },
   {
-    path: '/evaluations/:evaluationId', // Новый маршрут
+    path: EVALUATION_DETAIL_PAGE_ROUTE, // Новый маршрут
     element: EvaluationDetailPage,
+  },
+  {
+    path: CIS_DASHBOARD_ROUTE, // Новый маршрут
+    element: CISDashboardPage,
+  },
+   {
+    path: STUDENT_PROGRESS_ROUTE, // Новый маршрут
+    element: StudentProgressPage,
   },
   // {
   //   path: "*",

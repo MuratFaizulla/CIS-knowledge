@@ -7,3 +7,8 @@ export const CLASSESSTUDENTS_PAGE_ROUTE = "/classes/:classId/students";
 export const STUDENT_EVALUATION_PAGE_ROUTE = "/classes/:classId/students/:studentId/evaluate";
 export const MY_EVALUATIONS_PAGE_ROUTE = "/my-evaluations";
 export const EVALUATION_DETAIL_PAGE_ROUTE = "/evaluations/:evaluationId"; // Новый маршрут
+
+
+export const CIS_DASHBOARD_ROUTE = '/cis-dashboard';
+
+export const STUDENT_PROGRESS_ROUTE = '/student-progress/:student_id';

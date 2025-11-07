@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { fetchProfile } from '../../services/apiService';
-import { CLASSES_PAGE_ROUTE, LOGIN_PAGE_ROUTE, MY_EVALUATIONS_PAGE_ROUTE, PROFILE_PAGE_ROUTE } from '../../utils/consts';
+import { CIS_DASHBOARD_ROUTE, CLASSES_PAGE_ROUTE, LOGIN_PAGE_ROUTE, MY_EVALUATIONS_PAGE_ROUTE, PROFILE_PAGE_ROUTE } from '../../utils/consts';
 import styles from './HomePage.module.css';
 import FAQ from '../../components/FAQ/FAQ';
 import MissionAndCriteria from '../../components/CISMission/MissionAndCriteria';
@@ -127,6 +127,7 @@ const HomePage: React.FC = () => {
         )}
       </div>
       {isAuthenticated ? (
+        <>
         <div className={styles.featuresContainer}>
           <div className={styles.featureCard}>
             <h2 className={styles.featureTitle}>Мои оценки</h2>
@@ -165,6 +166,13 @@ const HomePage: React.FC = () => {
             </button>
           </div>
         </div>
+<button
+              className={styles.dashboardButton}
+              onClick={() => handleNavigate(CIS_DASHBOARD_ROUTE)}
+            >
+              Перейти к  CIS Dashboard
+            </button>
+        </>
       ) : (
         <div className={styles.unauthenticatedContainer}>
           <SchoolMissionVisionValues />

@@ -1,0 +1,80 @@
+/* src/components/CISStatisticsWidget.module.css */
+.widget {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 2rem 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #1f2937;
+}
+
+.select {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.stat {
+  text-align: center;
+}
+
+.label {
+  display: block;
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 1rem;
+  color: #6b7280;
+}
+
+.error {
+  color: #dc2626;
+}
+
+.dashboardBtn {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dashboardBtn:hover {
+  background: #2563eb;
+}

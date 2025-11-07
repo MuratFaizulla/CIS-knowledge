@@ -1,0 +1,309 @@
+/* src/pages/CISDashboardPage.module.css */
+.page {
+  padding: 1.5rem;
+  padding-top: 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #f9fafb;
+  min-height: 100vh;
+  font-family: system-ui, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #1f2937;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.select {
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: white;
+  font-size: 0.95rem;
+  min-width: 160px;
+}
+
+.pdfBtn {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.card span {
+  display: block;
+  color: #6b7280;
+  margin-bottom: 0.4rem;
+  font-size: 0.8rem;
+}
+
+.card strong {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.chart {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.chart h3 {
+  text-align: center;
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+  color: #1f2937;
+}
+
+.section {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  margin-bottom: 1rem;
+}
+
+.section h3 {
+  margin: 0 0 0.75rem 0;
+  color: #1f2937;
+  font-size: 1.1rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  overflow-x: auto;
+  display: block;
+  white-space: nowrap;
+}
+
+.table thead {
+  background: #f3f4f6;
+}
+
+.table th,
+.table td {
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table th {
+  font-weight: 600;
+  color: #374151;
+}
+
+.row {
+  cursor: pointer;
+}
+
+.row:hover {
+  background: #f9fafb;
+}
+
+.selected {
+  background: #dbeafe !important;
+  font-weight: 600;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 0.75rem;
+}
+
+.cardStudent {
+  background: white;
+  padding: 0.75rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.cardStudent:hover {
+  transform: translateY(-2px);
+}
+
+.name {
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.2rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.iin {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+/* === МОБИЛЬНАЯ АДАПТАЦИЯ === */
+@media (max-width: 768px) {
+  .page {
+    padding: 1rem;
+    padding-top: 90px;
+  }
+
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .select,
+  .pdfBtn {
+    width: 100%;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card strong {
+    font-size: 1.3rem;
+  }
+
+  .charts {
+    grid-template-columns: 1fr;
+  }
+
+  .chart {
+    padding: 0.75rem;
+  }
+
+  .chart h3 {
+    font-size: 0.95rem;
+  }
+
+  .table,
+  .table thead,
+  .table tbody,
+  .table th,
+  .table td,
+  .table tr {
+    display: block;
+  }
+
+  .table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .table tr {
+    margin-bottom: 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 0.5rem;
+    background: #fff;
+  }
+
+  .table td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+    white-space: normal;
+    text-align: right;
+  }
+
+  .table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0.75rem;
+    width: 45%;
+    padding-right: 0.5rem;
+    white-space: nowrap;
+    font-weight: 600;
+    color: #374151;
+    text-align: left;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.4rem;
+  }
+
+  .card strong {
+    font-size: 1.2rem;
+  }
+
+  .name {
+    font-size: 0.8rem;
+  }
+
+  .iin {
+    font-size: 0.7rem;
+  }
+}
