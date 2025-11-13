@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { fetchProfile } from '../../services/apiService';
-import lOGO_ZHAPIRAK from '../../assets/lOGO_ZHAPIRAK.png';
+import CIS_Member from '../../assets/CIS_Member.png';
 import styles from './Header.module.css';
 import { ABOUT_PAGE_ROUTE, CLASSES_PAGE_ROUTE, HOME_PAGE_ROUTE, LOGIN_PAGE_ROUTE, MY_EVALUATIONS_PAGE_ROUTE, PROFILE_PAGE_ROUTE } from '../../utils/consts';
 
@@ -49,6 +49,9 @@ interface AuthContextType {
 
 const DropdownMenu: React.FC<{ onClose: () => void; onLogout: () => void }> = ({ onClose, onLogout }) => (
   <div className={styles.dropdown}>
+   <Link to={HOME_PAGE_ROUTE} className={styles.dropdownItem} onClick={onClose}>
+      Главная
+    </Link>
     <Link to={PROFILE_PAGE_ROUTE} className={styles.dropdownItem} onClick={onClose}>
       Профиль
     </Link>
@@ -58,9 +61,7 @@ const DropdownMenu: React.FC<{ onClose: () => void; onLogout: () => void }> = ({
     <Link to={MY_EVALUATIONS_PAGE_ROUTE} className={styles.dropdownItem} onClick={onClose}>
       Мои оценки
     </Link>
-    <Link to={HOME_PAGE_ROUTE} className={styles.dropdownItem} onClick={onClose}>
-      Главная
-    </Link>
+    
     <Link to={ABOUT_PAGE_ROUTE} className={styles.dropdownItem} onClick={onClose}>
       О нас
     </Link>
@@ -107,7 +108,7 @@ const Header: React.FC = () => {
       <div className={styles.container}>
         <div className={styles.logo}>
           <Link to="/" className={styles.logoLink} title="CIS Home">
-            <img src={lOGO_ZHAPIRAK} alt="CIS Logo" />
+            <img src={CIS_Member} alt="CIS Logo" />
           </Link>
         </div>
         <nav className={styles.navDesktop}>

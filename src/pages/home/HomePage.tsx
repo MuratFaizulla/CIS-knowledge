@@ -2,13 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { fetchProfile } from '../../services/apiService';
-import { CIS_DASHBOARD_ROUTE, CLASSES_PAGE_ROUTE, LOGIN_PAGE_ROUTE, MY_EVALUATIONS_PAGE_ROUTE, PROFILE_PAGE_ROUTE } from '../../utils/consts';
+import {
+  CIS_DASHBOARD_ROUTE,
+  CLASSES_PAGE_ROUTE,
+  MY_EVALUATIONS_PAGE_ROUTE,
+  PROFILE_PAGE_ROUTE,
+} from '../../utils/consts';
 import styles from './HomePage.module.css';
 import FAQ from '../../components/FAQ/FAQ';
-import MissionAndCriteria from '../../components/CISMission/MissionAndCriteria';
 import SchoolMissionVisionValues from '../../components/SchoolMission/SchoolMissionVisionValues';
 
-// Interface to match fetchProfile response
 interface GeneralProfile {
   username: string;
   displayName: string;
@@ -49,9 +52,6 @@ interface AuthContextType {
   setUser: (user: AuthUser | null) => void;
 }
 
-// Component for About CIS section (unauthenticated users)
-
-
 const HomePage: React.FC = () => {
   const { isAuthenticated, token, user, setUser } = useAuth() as AuthContextType;
   const navigate = useNavigate();
@@ -63,8 +63,6 @@ const HomePage: React.FC = () => {
       if (isAuthenticated && token && !user?.profile) {
         try {
           const data = await fetchProfile(token);
-          console.log('Profile loaded:', JSON.stringify(data, null, 2)); // Debug
-          // Map flat response to nested Profile interface
           const profile: Profile = {
             general: {
               username: data.username || 'Не указано',
@@ -106,79 +104,103 @@ const HomePage: React.FC = () => {
   if (loading) return <div className={styles.loading}>Загрузка...</div>;
   if (error) return <div className={styles.error}>{error}</div>;
 
+  const displayName = user?.profile?.general?.displayName;
+
   return (
     <div className={styles.homePage}>
-      <div className={styles.heroSection}>
-        <h1 className={styles.heroTitle}>
-          Добро пожаловать{isAuthenticated && user?.profile?.general?.displayName ? `, ${user.profile.general.displayName}` : ''}!
-        </h1>
-        <p className={styles.heroSubtitle}>
-          {isAuthenticated
-            ? `Управляйте своими ${user?.profile?.general?.role === 'curator' ? 'классами и оценками' : 'оценками'} с CIS`
-            : 'Войдите, чтобы начать работу с CIS'}
-        </p>
-        {!isAuthenticated && (
-          <button
-            className={styles.heroButton}
-            onClick={() => handleNavigate(LOGIN_PAGE_ROUTE)}
-          >
-            Войти
-          </button>
-        )}
-      </div>
+      {/* HERO SECTION */}
+      <section className={styles.heroSection}>
+        <div className={styles.heroContent}>
+          <h1 className={styles.heroTitle}>
+            Добро пожаловать{displayName ? `, ${displayName}!` : ''}!
+          </h1>
+          <p className={styles.heroSubtitle}>
+            {isAuthenticated
+              ? 'Ваш личный центр управления обучением'
+              : 'Современная платформа для оценки и развития'}
+          </p>
+          
+        </div>
+        <div className={styles.heroImage}>
+          {/* <img className={styles.logoLink} src="https://www.eyuboglu.k12.tr/images/EgitimEyuboglu/CISAkreditasyonu/CISLogo.webp" alt="Home Illustration" /> */}
+          <div className={styles.illustration} />
+        </div>
+      </section>
+
+      {/* AUTHENTICATED USER CONTENT */}
       {isAuthenticated ? (
         <>
-        <div className={styles.featuresContainer}>
-          <div className={styles.featureCard}>
-            <h2 className={styles.featureTitle}>Мои оценки</h2>
-            <p className={styles.featureDescription}>
-              Просматривайте и управляйте своими оценками и результатами.
-            </p>
-            <button
-              className={styles.featureButton}
-              onClick={() => handleNavigate(MY_EVALUATIONS_PAGE_ROUTE)}
-            >
-              Перейти к оценкам
-            </button>
-          </div>
-          <div className={styles.featureCard}>
-            <h2 className={styles.featureTitle}>Классы</h2>
-            <p className={styles.featureDescription}>
-              Управляйте своими классами и отслеживайте прогресс учеников.
-            </p>
-            <button
-              className={styles.featureButton}
-              onClick={() => handleNavigate(CLASSES_PAGE_ROUTE)}
-            >
-              Перейти к классам
-            </button>
-          </div>
-          <div className={styles.featureCard}>
-            <h2 className={styles.featureTitle}>Профиль</h2>
-            <p className={styles.featureDescription}>
-              Обновите свои данные и настройте учетную запись.
-            </p>
-            <button
-              className={styles.featureButton}
-              onClick={() => handleNavigate(PROFILE_PAGE_ROUTE)}
-            >
-              Перейти к профилю
-            </button>
-          </div>
-        </div>
-<button
-              className={styles.dashboardButton}
-              onClick={() => handleNavigate(CIS_DASHBOARD_ROUTE)}
-            >
-              Перейти к  CIS Dashboard
-            </button>
+          <section className={styles.featuresSection}>
+            <div className={styles.featuresContainer}>
+              <div className={styles.featureCard}>
+                <div className={styles.featureIcon}>Chart</div>
+                <h3 className={styles.featureTitle}>Мои оценки</h3>
+                <p className={styles.featureDescription}>
+                  Просматривайте и управляйте своими оценками и результатами.
+                </p>
+                <button
+                  className={styles.featureButton}
+                  onClick={() => handleNavigate(MY_EVALUATIONS_PAGE_ROUTE)}
+                >
+                  Перейти
+                </button>
+              </div>
+
+              <div className={styles.featureCard}>
+                <div className={styles.featureIcon}>Users</div>
+                <h3 className={styles.featureTitle}>Классы</h3>
+                <p className={styles.featureDescription}>
+                  Управляйте классами и отслеживайте прогресс учеников.
+                </p>
+                <button
+                  className={styles.featureButton}
+                  onClick={() => handleNavigate(CLASSES_PAGE_ROUTE)}
+                >
+                  Перейти
+                </button>
+              </div>
+
+              <div className={styles.featureCard}>
+                <div className={styles.featureIcon}>User</div>
+                <h3 className={styles.featureTitle}>Профиль</h3>
+                <p className={styles.featureDescription}>
+                  Обновите данные и настройте учетную запись.
+                </p>
+                <button
+                  className={styles.featureButton}
+                  onClick={() => handleNavigate(PROFILE_PAGE_ROUTE)}
+                >
+                  Перейти
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <button
+            className={styles.dashboardButton}
+            onClick={() => handleNavigate(CIS_DASHBOARD_ROUTE)}
+          >
+            Перейти к CIS Dashboard
+          </button>
         </>
       ) : (
-        <div className={styles.unauthenticatedContainer}>
+        /* UNAUTHENTICATED CONTENT */
+        <section className={styles.unauthenticatedContainer}>
+          <div className={styles.missionHighlight}>
+            <h2>Мы помогаем учителям и ученикам расти вместе</h2>
+            <p>
+              Прозрачная аналитика, современные инструменты оценки и поддержка на каждом шагу.
+            </p>
+            <button
+              className={styles.ctaButton}
+              onClick={() => handleNavigate('/login')}
+            >
+              Начать использовать
+            </button>
+          </div>
           <SchoolMissionVisionValues />
-          <MissionAndCriteria />
           <FAQ />
-        </div>
+        </section>
       )}
     </div>
   );

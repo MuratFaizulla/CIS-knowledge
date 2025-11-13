@@ -1,7 +1,7 @@
 import AboutPage from "../pages/about/AboutPage";
 import ClassesPage from "../pages/Classes/ClassesPage";
 import ClassStudentsPage from "../pages/ClassStudents/ClassStudentsPage";
-import HomePage from "../pages/home/HomePage";
+import HomePage from "../pages/Home/HomePage";
 import LoginPage from "../pages/login/LoginPage";
 import ProfilePage from "../pages/ProfilePage/ProfilePage";
 import StudentEvaluationPage from "../pages/StudentEvaluation/StudentEvaluationPage";
@@ -20,8 +20,8 @@ import {
   EVALUATION_DETAIL_PAGE_ROUTE,
   STUDENT_PROGRESS_ROUTE,
 } from "./consts";
-import CISDashboardPage from "../pages/CISDashboardPage";
-import StudentProgressPage from "../pages/StudentProgressPage";
+import CISDashboardPage from "../pages/CISDashboardPage/CISDashboardPage";
+import StudentProgressPage from "../pages/StudentProgressPage/StudentProgressPage";
 
 export const routes = [
   {
