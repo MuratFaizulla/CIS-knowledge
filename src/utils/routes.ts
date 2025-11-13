@@ -21,7 +21,7 @@ import {
 } from "./consts";
 import CISDashboardPage from "../pages/CISDashboardPage/CISDashboardPage";
 import StudentProgressPage from "../pages/StudentProgressPage/StudentProgressPage";
-import HomePage from "../pages/Home/HomePage";
+import HomePage from "../pages/HomePage/HomePage";
 
 export const routes = [
   {
