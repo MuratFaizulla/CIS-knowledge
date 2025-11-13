@@ -43,9 +43,9 @@ const LoginPage: React.FC = () => {
     <div className={styles.loginPage}>
       <div className={styles.loginContainer}>
         <img src={logo} alt="CIS Logo" className={styles.loginLogo} />
-         <h2 className={styles.subtitle}>Қош келдіңіз!</h2>
+         <h2 className={styles.subtitle}>Добро пожаловать!</h2>
         <p className={styles.description}>
-          Порталдың жабық бөлігінде кіру үшін корпоративтік тіркелгі арқылы кіріңіз
+          Для доступа к закрытой части портала войдите в систему, используя свою корпоративную учетную запись.
         </p>
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.formGroup}>
@@ -61,7 +61,7 @@ const LoginPage: React.FC = () => {
             />
           </div>
           <div className={styles.formGroup}>
-            <label htmlFor="password" className={styles.label}>Пороль</label>
+            <label htmlFor="password" className={styles.label}>Пароль</label>
             <div className={styles.passwordWrapper}>
               <input
                 type={showPassword ? 'text' : 'password'}
